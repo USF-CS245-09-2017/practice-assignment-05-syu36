@@ -1,3 +1,8 @@
+/**
+ *
+ * Implements SortingAlgorithm interface and contains a sort method using quick sort.
+ *
+ */
 public class QuickSort implements SortingAlgorithm {
 
 	@Override
@@ -5,6 +10,12 @@ public class QuickSort implements SortingAlgorithm {
 		quicksort(a, 0, a.length - 1);
 	}
 
+	/**
+	 * Quick sort method. Recursively calls itself, sorting the left and the right sides recursively.
+	 * @param arr the array to sort
+	 * @param left the left index
+	 * @param right the right index
+	 */
 	private void quicksort (int[] arr, int left, int right) {
 		// base case
 		if (left < right) {
@@ -14,6 +25,13 @@ public class QuickSort implements SortingAlgorithm {
 		}
 	}
 
+	/**
+	 * Helper method that partitions (splits) the array by using the first element as a pivot
+	 * @param arr the array to sort
+	 * @param left the left index
+	 * @param right the right index
+	 * @return the middle index (where the partition happened)
+	 */
 	private int partition (int[] arr, int left, int right) {
 		if (left < right) {
 			int pivot = left;
@@ -37,6 +55,12 @@ public class QuickSort implements SortingAlgorithm {
 	}
 
 
+	/**
+	 * Swaps two elements in an array
+	 * @param a the array
+	 * @param i the first index to swap
+	 * @param j the second index to swap
+	 */
 	private void swap(int[] a, int i, int j) {
 		int temp = a[i];
 		a[i] = a[j];
